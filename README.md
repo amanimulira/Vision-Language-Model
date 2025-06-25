@@ -6,5 +6,5 @@ Topics
 - Contrastive Learning (CLIP, SigLip)
 - Language Model (Gemma)
 - KV-Chache
-- Robot Positional Encoding 
+- Rotary Positional Encoding 
 - Normalization (Batch, Layer and RMS)
