@@ -3,23 +3,19 @@
 Topics
 
 - Vision Transformer
-- Contrastive Learning (CLIP, SigLip)
-- Language Model (Gemma)
-- KV-Chache
-- Rotary Positional Encoding 
-- Normalization (Batch, Layer and RMS)
+- Contrastive Learning ( CLIP, SigLip )
+- Language Model ( Gemma )
+- KV-Chache ( effecient inference )
+- Rotary Positional Encoding ( longer context length )
+- Normalization ( Batch, Layer and RMS )
 
-[Contrastive Vision Encoder] ( SigLIP ) -> [Linear Projection] -> [ Transformer 
-								  |
-						[ Tokenizer ] --> |
-								  |
-								  L	
+{Image} [Contrastive Vision Encoder] ( SigLIP ) -> [Linear Projection] |...| -> [ Transformer Decoder ] ( Gemma: 2B Language Model )
 
+{Text} [ Tokenizer ] (SentencePiece) |...| -> [ Transformer Decoder ] ( Gemma: 2B Language Model )
 
 Image is split into blocks of pixels and each block, grid, will be converted into an embedding. 
 
 These embedding will be concatinated with the tokens then feed into the decoder.
-
 
 Contrastive Learning: take an encoded image and associated encoded text compute the dot product and where the two, text + image, correspond the model should output a high value while producing a low value for every other image text combination, within the associated row/column.
 
@@ -33,7 +29,7 @@ Treat problem as a binary classification task. Use Sigmoid. Allows parallelizati
 
 Vision Transformer:
 
-	image apply convolution + flatten, then add positional encoding, learned parameter, feed it into transformer to add context.
+image apply convolution + flatten, then add positional encoding, learned parameter, feed it into transformer to add context.
 
 Output: Contextualized Embeddings!
 
