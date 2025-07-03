@@ -32,5 +32,3 @@ Vision Transformer:
 image apply convolution + flatten, then add positional encoding, learned parameter, feed it into transformer to add context.
 
 Output: Contextualized Embeddings!
-
-
